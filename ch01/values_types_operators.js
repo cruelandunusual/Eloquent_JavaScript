@@ -1,3 +1,4 @@
+/*
 console.log("-----------");
 
 let x = Math.round(Math.random()*100);
@@ -12,3 +13,20 @@ else
 }
 
 console.log("-----------");
+*/
+
+function factorial(n)
+{
+    if (n == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return factorial(n - 1) * n;
+        
+    }
+}
+
+var num = 5;
+console.log(factorial(num));
