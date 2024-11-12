@@ -1,1 +1,1 @@
-Learning JavaScript with eponymous free book https://eloquentjavascript.net
+Learning JavaScript with the eponymous free book https://eloquentjavascript.net
