@@ -14,7 +14,7 @@ else
 
 console.log("-----------");
 */
-
+/* 
 function factorial(n)
 {
     if (n == 0)
@@ -30,3 +30,19 @@ function factorial(n)
 
 var num = 5;
 console.log(factorial(num));
+ */
+let x = Math.floor(Math.random() * 10);
+let y = Math.floor(Math.random() * 10);
+resultStr = x + " > " + y;
+console.log(x>y ? resultStr + " = true" : resultStr + " = false");
+
+console.log("-----------");
+
+console.log(!(x>y));
+
+/*if (x > y) {
+    console.log(resultStr + " = true");
+}
+else console.log(resultStr + " = false");
+*/
+
