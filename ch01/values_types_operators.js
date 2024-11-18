@@ -1,7 +1,10 @@
+/*
+Contains code copied from the book, modified from the book's samples
+or written from scratch by me while working through chapter 1: values, types and operators
+*/
 
 /* 
 // Simple logial test and if else structure
- 
 let x = Math.round(Math.random()*100);
 let y = Math.round(Math.random()+1);
 if (x < (100/y))
