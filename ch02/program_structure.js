@@ -57,7 +57,7 @@ console.log(!(x>y));
 // print the properly expected result, but the test inside an if/else
 // just enters the if block every time...
 let num = 5;
-if (!Number.isNaN(num)){
+if (!Number.isNaN(num)) {
     console.log(num + " is the square root of " + num * num);
 }
 else {
@@ -68,10 +68,10 @@ else {
 // I know all this stuff but I'm being a good student
 // and covering it again for completeness
 let myNum = 1;
-if (myNum < 10){
+if (myNum < 10) {
     console.log("small");
 }
-else if (myNum < 50){
+else if (myNum < 50) {
     console.log("medium");
 }
 else {
@@ -79,11 +79,75 @@ else {
 }
  */
 
-
+/* 
 // looping
 let number = 0;
-while (number < 12){
+while (number < 12) {
     
     number += 2;
     console.log(number);
 }
+ */
+
+
+/* 
+// looping to calculate powers of 2, starting from 1**2
+let result = 1;
+let counter = 0;
+while (counter < 64) {
+    result *= 2;
+    counter++;
+    if (counter == 32) // print this to compare 2^32 with 2^64
+        console.log(result);
+}
+console.log(result);
+ */
+
+/* 
+// looping to calulate powers of 2, starting from 1**2
+// this time with a for loop
+let result = 1;
+for (let counter = 0; counter < 64; counter++) {
+    result *= 2;
+    if (counter == 31) //print this to compare 2^32 with 2^64
+    console.log(result);
+}
+console.log(result);
+ */
+
+
+/* 
+// using modulo to test for the first number greater than
+// 20 that's also divisible by 7 with no remainder
+for (let current = 20; ; current += 1) {
+    if (current % 7 == 0) {
+         // current only has scope inside loop so need to print result here
+        console.log(current);
+        break;
+    }
+}
+ */
+
+
+/* Exercises */
+
+/*
+ Write a loop that makes seven calls to console.log to output the following triangle:
+#
+##
+###
+####
+#####
+######
+#######
+ */
+let stars = "";
+let counter = 0;
+for (let rows = 1; rows <= 7; rows++) {
+    while (counter < rows) {
+        stars += "*";
+        counter++;
+    }
+    console.log(stars);
+}
+
