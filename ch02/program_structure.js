@@ -141,6 +141,7 @@ for (let current = 20; ; current += 1) {
 ######
 #######
  */
+/* 
 let stars = "";
 let counter = 0;
 for (let rows = 1; rows <= 7; rows++) {
@@ -150,4 +151,54 @@ for (let rows = 1; rows <= 7; rows++) {
     }
     console.log(stars);
 }
+ */
+const stars = [7, 3, 10, 15, 14, 12, 2, 1];
+let max = 0;
+for (let i = 0; i < stars.length; i++) {
+    if (stars[i] > max) {
+        max = stars[i];
+    }
+}
+//build a string for printing each line
+let starStr = "";
+for (let down = max; down > 0; down--) {
+    for (let across = 0; across < stars.length; across++) {
+        if (stars[across] < down) {
+            starStr += "-";
+        }
+        else {
+            starStr += "*";
+        }
+        console.log(starStr);
+        starStr = "";
+    }
+
+}
+
+/* 
+Some C code I wrote years ago to print a vertical histogram
+*/
+
+
+    /* print vertically */
+    /* first need to find the largest value in the array */
+/* 
+    int max = 0;
+    for (c = 0; c < SIZE; ++c) {
+	if (vowels[c] > max) {
+	    max = vowels[c];	// max stores highest value yet found
+	}
+    }
+
+    for (c = max; c > 0; --c) {
+	for (y = 0; y < SIZE; ++y) {
+	    if (vowels[y] < c) {
+		printf(" - ");
+	    }
+	    else printf(" * ");
+	}
+	printf("\n");
+    }
+*/
+ 
 
