@@ -152,7 +152,9 @@ for (let rows = 1; rows <= 7; rows++) {
     console.log(stars);
 }
  */
-const stars = [7, 3, 10, 15, 14, 12, 2, 1];
+
+const stars = [4, 3, 7, 10, 3, 9, 2, 1];
+//find the largest number in the array
 let max = 0;
 for (let i = 0; i < stars.length; i++) {
     if (stars[i] > max) {
@@ -161,20 +163,25 @@ for (let i = 0; i < stars.length; i++) {
 }
 //build a string for printing each line
 let starStr = "";
-for (let down = max; down > 0; down--) {
-    for (let across = 0; across < stars.length; across++) {
-        if (stars[across] < down) {
-            starStr += "-";
+for (let y = max; y > 0; y--) {
+    for (let x = 0; x < stars.length; x++) {
+        if (stars[x] < y) {
+            starStr += "- ";
         }
         else {
-            starStr += "*";
+            starStr += "* ";
         }
-        console.log(starStr);
-        starStr = "";
     }
+    console.log(starStr);
+    starStr = "";
 
 }
 
+
+// myStr = "";
+// console.log(myStr);
+// myStr += "*";
+// console.log(myStr);
 /* 
 Some C code I wrote years ago to print a vertical histogram
 */
