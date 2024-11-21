@@ -142,6 +142,9 @@ for (let current = 20; ; current += 1) {
 #######
  */
 /* 
+// This is my solution - I think it's different from what the author
+// is expecting as the hint mentions using .length of a string and
+// I haven't used that. I'm pleased with my solution though.
 let stars = "";
 let counter = 0;
 for (let rows = 1; rows <= 7; rows++) {
@@ -153,6 +156,10 @@ for (let rows = 1; rows <= 7; rows++) {
 }
  */
 
+
+/* 
+// Working on that exercise above prompted me to dig out
+// the old C code I wrote to print a histogram vertically
 const stars = [4, 3, 7, 10, 3, 9, 2, 1];
 let max = 0;
 for (let i = 0; i < stars.length; i++) {
@@ -162,10 +169,10 @@ for (let i = 0; i < stars.length; i++) {
 }
 
 let starStr = ""; // build a string for printing each line
-for (let y = max; y > 0; y--) {
+for (let y = max; y > 0; y--) { // loop down from highest value to lowest
     for (let x = 0; x < stars.length; x++) {
         if (stars[x] < y) {
-            starStr += "- ";
+            starStr += "  ";
         }
         else {
             starStr += "* ";
@@ -173,6 +180,64 @@ for (let y = max; y > 0; y--) {
     }
     console.log(starStr);
     starStr = "";
-
 }
+ */
 
+
+/*
+Write a program that uses console.log to print all the numbers from 1 to 100,
+with two exceptions. For numbers divisible by 3, print "Fizz" instead of the
+number, and for numbers divisible by 5 (and not 3), print "Buzz" instead.
+*/
+/* 
+for (let i = 1; i <= 30; i++) {
+    if (i % 3 == 0) {
+        console.log("Fizz");
+    }
+    else if (i % 5 == 0 && !(i % 3 == 0)) {
+        console.log("Buzz");
+    }
+    else {
+        console.log(i);
+    }
+}
+ */
+/*
+When you have that working, modify your program to print "FizzBuzz" for
+numbers that are divisible by both 3 and 5 (and still print "Fizz" or "Buzz"
+for numbers divisible by only one of those).
+*/
+/* 
+for (let i = 1; i <= 100; i++) {
+    if (i % 3 == 0 && !(i % 5 == 0)) {
+        console.log("Fizz");
+    }
+    else if (i % 5 == 0 && !(i % 3 == 0)) {
+        console.log("Buzz");
+    }
+    else if (i % 3 == 0 && i % 5 == 0) {
+        console.log("FizzBuzz");
+    }
+    else {
+        console.log(i);
+    }
+}
+ */
+
+/*
+Write a program that creates a string that represents an 8×8 grid, using newline
+characters to separate lines. At each position of the grid there is either a space
+or a "#" character. The characters should form a chessboard.
+Passing this string to console.log should show something like this:
+# # # #
+# # # #
+# # # #
+# # # #
+# # # #
+# # # #
+# # # #
+# # # #
+When you have a program that generates this pattern, define a binding size
+= 8 and change the program so that it works for any size, outputting a grid
+of the given width and height.
+*/
