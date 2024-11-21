@@ -157,31 +157,31 @@ for (let rows = 1; rows <= 7; rows++) {
  */
 
 
-/* 
+
 // Working on that exercise above prompted me to dig out
 // the old C code I wrote to print a histogram vertically
-const stars = [4, 3, 7, 10, 3, 9, 2, 1];
+const histogram = [4, 3, 7, 10, 3, 9, 2, 1];
 let max = 0;
-for (let i = 0; i < stars.length; i++) {
-    if (stars[i] > max) {
-        max = stars[i]; // store the largest number in the array
+for (let i = 0; i < histogram.length; i++) {
+    if (histogram[i] > max) {
+        max = histogram[i]; // store the largest number in the array
     }
 }
 
-let starStr = ""; // build a string for printing each line
+let starStr = ""; // initialise a string for printing each line
 for (let y = max; y > 0; y--) { // loop down from highest value to lowest
-    for (let x = 0; x < stars.length; x++) {
-        if (stars[x] < y) {
-            starStr += "  ";
+    for (let x = 0; x < histogram.length; x++) {
+        if (histogram[x] < y) {
+            starStr += "  "; // append space if current element is less than max
         }
         else {
-            starStr += "* ";
+            starStr += "* "; // else append a star
         }
     }
     console.log(starStr);
     starStr = "";
 }
- */
+
 
 
 /*
