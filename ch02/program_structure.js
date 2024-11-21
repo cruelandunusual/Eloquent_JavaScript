@@ -1,10 +1,10 @@
 /*
 Contains code copied from the book, modified from the book's samples
-or written from scratch by me while working through chapter 1: values, types and operators
+or written from scratch by me while working through chapter 2: Program Structure
 */
 
 /* 
-// Simple logial test and if else structure
+// Simple logical test and if else structure
 let x = Math.round(Math.random()*100);
 let y = Math.round(Math.random()+1);
 if (x < (100/y))
@@ -157,7 +157,7 @@ for (let rows = 1; rows <= 7; rows++) {
  */
 
 
-
+/* 
 // Working on that exercise above prompted me to dig out
 // the old C code I wrote to print a histogram vertically
 const histogram = [4, 3, 7, 10, 3, 9, 2, 1];
@@ -181,7 +181,7 @@ for (let y = max; y > 0; y--) { // loop down from highest value to lowest
     console.log(starStr);
     starStr = "";
 }
-
+ */
 
 
 /*
@@ -229,15 +229,38 @@ Write a program that creates a string that represents an 8×8 grid, using newlin
 characters to separate lines. At each position of the grid there is either a space
 or a "#" character. The characters should form a chessboard.
 Passing this string to console.log should show something like this:
+ # # # #
 # # # #
+ # # # #
 # # # #
+ # # # #
 # # # #
-# # # #
-# # # #
-# # # #
-# # # #
+ # # # #
 # # # #
 When you have a program that generates this pattern, define a binding size
 = 8 and change the program so that it works for any size, outputting a grid
 of the given width and height.
 */
+/* 
+let boardWid = 13;
+let chessStr = "";
+let blank = true; // start the grid with a blank square
+for (let y = 0; y < boardWid; y++) {
+    for (let x = 0; x < boardWid; x++) {
+        if (blank) {
+            chessStr += " ";
+        }
+        else {
+            chessStr += "#";
+        }
+        blank = !blank;
+    }
+    chessStr += "\n";
+    if (boardWid % 2 == 0) {
+        // if the board is an even x*x then flip blank back again for the next line
+        blank = !blank;
+    }
+    // if it's an odd x*x then leave blank flipped for the next line
+}
+console.log(chessStr);
+ */
