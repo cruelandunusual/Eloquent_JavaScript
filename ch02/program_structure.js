@@ -242,7 +242,7 @@ When you have a program that generates this pattern, define a binding size
 of the given width and height.
 */
 
-let boardWid = 13;
+let boardWid = 12;
 let chessStr = "";
 let blank = true; // start the grid with a blank square
 for (let y = 0; y < boardWid; y++) {
