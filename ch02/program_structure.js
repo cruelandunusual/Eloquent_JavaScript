@@ -241,7 +241,7 @@ When you have a program that generates this pattern, define a binding size
 = 8 and change the program so that it works for any size, outputting a grid
 of the given width and height.
 */
-/* 
+
 let boardWid = 13;
 let chessStr = "";
 let blank = true; // start the grid with a blank square
@@ -263,4 +263,4 @@ for (let y = 0; y < boardWid; y++) {
     // if it's an odd x*x then leave blank flipped for the next line
 }
 console.log(chessStr);
- */
+
