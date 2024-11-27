@@ -3,6 +3,8 @@ Contains code copied from the book, modified from the book's samples
 or written from scratch by me while working through chapter 3: Functions
 */
 
+/////////////////////////////////////////////////////////////
+
 /*
 define a function with the const keyword, and bind a name
 to the function definition. There should be a semi colon
@@ -18,6 +20,13 @@ let result = square(4);
 console.log(result);
 
 
+
+/*
+this is just given as an examplein the book
+as a way to define a function with the const keyword
+but I thout it was pretty clever so I copied it here
+*/
+/* 
 const roundTo = function(n, step) {
     let remainder = n % step;
     return n - remainder + (remainder < step / 2 ? 0 : step);
@@ -26,7 +35,7 @@ const roundTo = function(n, step) {
 console.log(roundTo(30,10));
  */
 
-
+/////////////////////////////////////////////////////////////
 
 /* 
 these two circularly defined functions will exceed the call stack (obviously)
@@ -42,6 +51,8 @@ function egg(){
 
 console.log(chicken() + " came first");
 */
+
+/////////////////////////////////////////////////////////////
 
 /*
 a bunch of function definitions that replicate the basic arithmetic operators
@@ -76,6 +87,8 @@ function divide(a, b) {
 // console.log(multiply(5,multiply(5,multiply(5,5))));
 // console.log(divide(20,0.01));
 
+/////////////////////////////////////////////////////////////
+
 /*
 this parameter form (= 1) means if the second parameter is ignored
 the function will supply 1 in its place. So you can call roundTo(24.3)
@@ -88,3 +101,99 @@ function roundTo(n, step = 1) {
 }
 */
 // console.log(roundTo(24.3));
+
+/////////////////////////////////////////////////////////////
+
+/*
+global and local scope examples
+*/
+/* 
+let x = 10; // global
+if (true) {
+    let y = 20; // local to block
+    var z = 30; // also global
+}
+console.log(x);
+// console.log(y); // will fail because y no longer in scope
+console.log(z);
+ */
+
+/////////////////////////////////////////////////////////////
+
+/*
+functions can be defined within functions
+*/
+/* 
+const hummus = function(factor){
+    const ingredient = function(amount, unit, name){
+        let ingredientAmount = amount * factor;
+        if (ingredientAmount > 1) {
+            unit += "s";
+        }
+        console.log(`${ingredientAmount} ${unit} ${name}`);
+    };
+    ingredient(1, "can", "chickpeas");
+    ingredient(0.25, "cup", "tahini");
+    ingredient(0.25, "cup", "lemon juice");
+    ingredient(1, "clove", "garlic");
+    ingredient(2, "tablespoon", "olive oil");
+    ingredient(0.5, "teaspoon", "cumin");
+};
+
+hummus(2);
+ */
+
+/////////////////////////////////////////////////////////////
+
+/*
+Arrow function definition syntax
+*/
+/* 
+const roundTo = (n, step = 1) => {
+    let remainder = n % step;
+    return n - remainder + (remainder < step / 2 ? 0 : step);
+};
+
+console.log(roundTo(874.4));
+ */
+
+/////////////////////////////////////////////////////////////
+
+/*
+Closures.
+Not entirely sure what's going on here.
+I see that the function names wrap1 and wrap2 are assigned
+to what's returned by wrapValue(n). Not sure of the usefulness of this though...?
+*/
+/* 
+function wrapValue(n){
+    let local = n;
+    return () => local;
+}
+
+let wrap1 = wrapValue(1);
+let wrap2 = wrapValue(2);
+console.log(wrap1());
+console.log(wrap2());
+ */
+
+/////////////////////////////////////////////////////////////
+
+/*
+And lo, this example shows the usefulness of closures pretty clearly.
+This is actually really clever and I can see how this could
+be used in production.
+*/
+
+function multiplier(factor){
+    return number => number * factor;
+}
+
+let twice = multiplier(2);
+console.log(twice(5));
+
+let thrice = multiplier(3);
+console.log(thrice(5));
+
+let half = multiplier(0.5);
+console.log(half(10));

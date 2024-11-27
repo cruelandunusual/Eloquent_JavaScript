@@ -17,6 +17,7 @@ else
 }
  */
 
+/////////////////////////////////////////////////////////////
 
 /* 
 // Factorial function, just to remind myself how recursion works
@@ -37,6 +38,7 @@ var num = 5;
 console.log(factorial(num));
  */
 
+/////////////////////////////////////////////////////////////
 
 /* 
 // Building a string up from various substrings based on result of logical test.
@@ -51,6 +53,8 @@ console.log("-----------");
 console.log(!(x>y));
  */
 
+/////////////////////////////////////////////////////////////
+
 /* 
 // NaN -- somehow this doesn't work for values that aren't a number.
 // e.g. the test !Number.isNaN(num) printed inside a console.log will
@@ -63,6 +67,8 @@ if (!Number.isNaN(num)) {
 else {
     console.log("you should have entered a number");
 }
+
+/////////////////////////////////////////////////////////////
 
 // more branching stuff generally
 // I know all this stuff but I'm being a good student
@@ -79,6 +85,8 @@ else {
 }
  */
 
+/////////////////////////////////////////////////////////////
+
 /* 
 // looping
 let number = 0;
@@ -89,6 +97,7 @@ while (number < 12) {
 }
  */
 
+/////////////////////////////////////////////////////////////
 
 /* 
 // looping to calculate powers of 2, starting from 1**2
@@ -103,6 +112,8 @@ while (counter < 64) {
 console.log(result);
  */
 
+/////////////////////////////////////////////////////////////
+
 /* 
 // looping to calulate powers of 2, starting from 1**2
 // this time with a for loop
@@ -115,6 +126,7 @@ for (let counter = 0; counter < 64; counter++) {
 console.log(result);
  */
 
+/////////////////////////////////////////////////////////////
 
 /* 
 // using modulo to test for the first number greater than
@@ -128,6 +140,7 @@ for (let current = 20; ; current += 1) {
 }
  */
 
+/////////////////////////////////////////////////////////////
 
 /* Exercises */
 
@@ -242,11 +255,11 @@ When you have a program that generates this pattern, define a binding size
 of the given width and height.
 */
 
-let boardWid = 12;
+let gridLen = 12;
 let chessStr = "";
 let blank = true; // start the grid with a blank square
-for (let y = 0; y < boardWid; y++) {
-    for (let x = 0; x < boardWid; x++) {
+for (let y = 0; y < gridLen; y++) { // outer loop for height
+    for (let x = 0; x < gridLen; x++) { // inner loop for width
         if (blank) {
             chessStr += " ";
         }
@@ -256,7 +269,7 @@ for (let y = 0; y < boardWid; y++) {
         blank = !blank;
     }
     chessStr += "\n";
-    if (boardWid % 2 == 0) {
+    if (gridLen % 2 == 0) {
         // if the board is an even x*x then flip blank back again for the next line
         blank = !blank;
     }
