@@ -184,7 +184,7 @@ And lo, this example shows the usefulness of closures pretty clearly.
 This is actually really clever and I can see how this could
 be used in production.
 */
-
+/* 
 function multiplier(factor){
     return number => number * factor;
 }
@@ -197,3 +197,46 @@ console.log(thrice(5));
 
 let half = multiplier(0.5);
 console.log(half(10));
+ */
+
+
+function power(base, exponent) {
+    if (exponent == 0) {
+        return 1;
+    }
+    else {
+        return base * power(base, exponent - 1);
+    }
+}
+
+//console.log(power(27, 3));
+
+//console.log(729*3);
+
+function multByThree(base, mult) {
+    myString = "";
+    multiplier = base * mult;
+    for (let i = 1; i <= 20; i++) {
+        myString += base * (multiplier * mult).toString() + " * " + mult.toString() + " = " + (base * (multiplier * mult)) * mult + "\n";
+        multiplier *= mult;
+    }
+    return myString;
+}
+console.log(multByThree(1,3));
+
+/*
+Consider this puzzle: by starting from the number 1 and repeatedly either
+adding 5 or multiplying by 3, an infinite set of numbers can be produced. How
+would you write a function that, given a number, tries to find a sequence of
+such additions and multiplications that produces that number? For example,
+the number 13 could be reached by first multiplying by 3 and then adding 5
+twice, whereas the number 15 cannot be reached at all.
+*/
+
+/*
+some inital thoughts before I attempt a solution...
+* starting from 1 and adding 5 will always produce a result that's not
+divisible by 5
+* starting from 1 and multiplying by 3 (and only ever multiplying by 3) will
+always produce a result that's divisible by 3
+*/
