@@ -199,7 +199,16 @@ let half = multiplier(0.5);
 console.log(half(10));
  */
 
+/////////////////////////////////////////////////////////////
 
+/*
+Recursion.
+*/
+/*
+Copied straight from the book. There's a few
+neat examples of recursion peppered throughout it (so far)
+*/
+/* 
 function power(base, exponent) {
     if (exponent == 0) {
         return 1;
@@ -208,21 +217,10 @@ function power(base, exponent) {
         return base * power(base, exponent - 1);
     }
 }
-
+ */
 //console.log(power(27, 3));
 
-//console.log(729*3);
 
-function multByThree(base, mult) {
-    myString = "";
-    multiplier = base * mult;
-    for (let i = 1; i <= 20; i++) {
-        myString += base * (multiplier * mult).toString() + " * " + mult.toString() + " = " + (base * (multiplier * mult)) * mult + "\n";
-        multiplier *= mult;
-    }
-    return myString;
-}
-console.log(multByThree(1,3));
 
 /*
 Consider this puzzle: by starting from the number 1 and repeatedly either
@@ -239,4 +237,32 @@ some inital thoughts before I attempt a solution...
 divisible by 5
 * starting from 1 and multiplying by 3 (and only ever multiplying by 3) will
 always produce a result that's divisible by 3
+* 
 */
+// here's a temp function I wrote to see
+// the results of 3 * (result of 3 * prev_num)
+function multByThree(base, mult) {
+    myString = base.toString() + " * " + mult.toString() + " = " + base * mult + "\n";
+    base *= mult;
+    for (let i = 1; i <= 12; i++) {
+        myString += base.toString() + " * " + mult.toString() + " = " + base * mult + "\n";
+        base *= mult;
+    }
+    return myString;
+}
+
+// here's a temp function I wrote to see
+// the results of 1 + (result of 1 + prev_num)
+function addQuotient(base, quot){
+    myString = base.toString() + " + " + quot + " = " + (base + quot) + "\n";
+    base += 5;
+    for (let i = 1; i <= 12; i++) {
+        myString += base.toString() + " + " + quot + " = " + (base + quot) + "\n";
+        base += 5;
+    }
+    return myString;
+}
+
+
+console.log(multByThree(1, 3));
+//console.log(addQuotient(1, 5));
