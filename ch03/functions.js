@@ -264,5 +264,25 @@ function addQuotient(base, quot){
 }
 
 
-console.log(multByThree(1, 3));
+//console.log(multByThree(1, 3));
 //console.log(addQuotient(1, 5));
+
+function dontKnowWhatToCallThisYet(num) {
+    result = false;
+    if (num < 8 && num != 3) {
+        return result;
+    }
+    if (num / 3 == 5) {
+        return result;
+    }
+    if (num % 3 != 0) {
+        dontKnowWhatToCallThisYet(num - 5);
+    } // need to satisfy logical test of num % 3 == 0 but where
+    // the starting number isn't one that can be reached, e.g. 12
+    else {
+        result = true;
+    }
+    return result;
+}
+
+console.log(dontKnowWhatToCallThisYet(Number(process.argv[2])));
