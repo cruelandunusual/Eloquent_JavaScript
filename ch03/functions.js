@@ -22,9 +22,9 @@ console.log(result);
 
 
 /*
-this is just given as an examplein the book
+this is just given as an example in the book
 as a way to define a function with the const keyword
-but I thout it was pretty clever so I copied it here
+but I thought it was pretty clever so I copied it here
 */
 /* 
 const roundTo = function(n, step) {
