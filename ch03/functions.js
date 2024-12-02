@@ -220,7 +220,9 @@ function power(base, exponent) {
  */
 //console.log(power(27, 3));
 
+/////////////////////////////////////////////////////////////
 
+/* Exercises */
 
 /*
 Consider this puzzle: by starting from the number 1 and repeatedly either
@@ -234,11 +236,11 @@ twice, whereas the number 15 cannot be reached at all.
 /*
 some inital thoughts before I attempt a solution...
 * starting from 1 and adding 5 will always produce a result that's not
-divisible by 5
+divisible by 5, but will sometimes be divisible by 3
 * starting from 1 and multiplying by 3 (and only ever multiplying by 3) will
 always produce a result that's divisible by 3
-* 
 */
+
 /* 
 // here's a temp function I wrote to see
 // the results of 3 * (result of 3 * prev_num)
@@ -252,6 +254,7 @@ function multByThree(base, mult) {
     return myString;
 }
  */
+
 /* 
 // here's a temp function I wrote to see
 // the results of 1 + (result of 1 + prev_num)
@@ -269,7 +272,7 @@ function addQuotient(base, quot){
 //console.log(multByThree(1, 3));
 //console.log(addQuotient(1, 5));
 /* 
-function dontKnowWhatToCallThisYet(num) {
+function findResultFromMult3orAdd5(num) {
     result = false;
     if (num < 8 && num != 3) {
         return result;
@@ -278,7 +281,7 @@ function dontKnowWhatToCallThisYet(num) {
         return result;
     }
     if (num % 3 != 0) {
-        dontKnowWhatToCallThisYet(num - 5);
+        findResultFromMult3orAdd5(num - 5);
     } // need to satisfy logical test of num % 3 == 0 but where
     // the starting number isn't one that can be reached, e.g. 12
     else {
@@ -286,16 +289,14 @@ function dontKnowWhatToCallThisYet(num) {
     }
     return result;
 }
-*/
-// console.log(dontKnowWhatToCallThisYet(Number(process.argv[2])));
+ */
+// console.log(findResultFromMult3orAdd5(Number(process.argv[2])));
  
-
 /*
-Here is the author's solution, which I have avoided looking at for a while
-in the hope that I'd find the 'perfect' solution, but I can't find a fully
-working solution on my own...
+Here is the author's solution, which I had avoided looking at for a while
+in the hope that I'd find my own solution, but I can't...
 */
-
+/* 
 function findSolution(target) {
     function find(current, history) {
         if (current == target) {
@@ -312,5 +313,48 @@ function findSolution(target) {
     return find(1, "1");
 }
 console.log(findSolution(24));
-// → (((1 * 3) + 5) * 3)
+ */
+/*
+The previous chapter introduced the standard function Math.min that returns
+its smallest argument. We can write a function like that ourselves now. Define
+the function min that takes two arguments and returns their minimum.
+*/
+function PMSmin(a, b) {
+    return a < b ? a : b;
+}
 
+//console.log(PMSmin(4, 4));
+
+/*
+We’ve seen that we can use % (the remainder operator) to test whether a number
+is even or odd by using % 2 to see whether it’s divisible by two. Here’s another
+way to define whether a positive whole number is even or odd:
+• Zero is even.
+• One is odd.
+• For any other number N, its evenness is the same as N - 2.
+Define a recursive function isEven corresponding to this description. The
+function should accept a single parameter (a positive, whole number) and return
+a Boolean.
+Test it on 50 and 75. See how it behaves on -1. Why? Can you think of a
+way to fix this?
+*/
+
+function isEven(num) {
+    function abs(number){
+        return number < 0 ? -number : number;
+    }
+    num = abs(num);
+    result = false;
+    if (num == 0) {
+        result = true;
+    }
+    else if (num == 1) {
+        result = false;
+    }
+    else {
+        return isEven(num - 2);
+    }
+    return result;
+}
+
+console.log(isEven(Number(process.argv[2])));
