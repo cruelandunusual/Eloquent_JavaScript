@@ -239,6 +239,7 @@ divisible by 5
 always produce a result that's divisible by 3
 * 
 */
+/* 
 // here's a temp function I wrote to see
 // the results of 3 * (result of 3 * prev_num)
 function multByThree(base, mult) {
@@ -250,7 +251,8 @@ function multByThree(base, mult) {
     }
     return myString;
 }
-
+ */
+/* 
 // here's a temp function I wrote to see
 // the results of 1 + (result of 1 + prev_num)
 function addQuotient(base, quot){
@@ -262,11 +264,11 @@ function addQuotient(base, quot){
     }
     return myString;
 }
-
+ */
 
 //console.log(multByThree(1, 3));
 //console.log(addQuotient(1, 5));
-
+/* 
 function dontKnowWhatToCallThisYet(num) {
     result = false;
     if (num < 8 && num != 3) {
@@ -284,5 +286,31 @@ function dontKnowWhatToCallThisYet(num) {
     }
     return result;
 }
+*/
+// console.log(dontKnowWhatToCallThisYet(Number(process.argv[2])));
+ 
 
-console.log(dontKnowWhatToCallThisYet(Number(process.argv[2])));
+/*
+Here is the author's solution, which I have avoided looking at for a while
+in the hope that I'd find the 'perfect' solution, but I can't find a fully
+working solution on my own...
+*/
+
+function findSolution(target) {
+    function find(current, history) {
+        if (current == target) {
+            return history;
+        }
+        else if (current > target) {
+            return null;
+        }
+        else {
+            return find(current + 5, `(${history} + 5)`) ??
+                find(current * 3, `(${history} * 3)`);
+        }
+    }
+    return find(1, "1");
+}
+console.log(findSolution(24));
+// → (((1 * 3) + 5) * 3)
+
