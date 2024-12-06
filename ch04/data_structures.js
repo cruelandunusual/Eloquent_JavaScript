@@ -21,11 +21,54 @@ console.log(sequence);
  */
 
 /*
+Elements can themselves be arrays, recursively.
+*/
+
+/*
+Recursive function to print the each element of an array.
+If an element is itself an array, the function is called and
+passed that element/array. 
+*/
+/* 
+let myArray = [[1, ["this", "that", "the other"], 2, 3, 4, 5], "work", "home", "jogging"];
+
+function printArray(arraylist) {
+    for (let i = 0; i < arraylist.length; i++) {
+        if (typeof (arraylist[i]) == 'object') {
+            printArray(arraylist[i]);
+        }
+        else {
+            console.log(arraylist[i]);
+        }
+    }
+}
+printArray(myArray);
+ */
+
+let myString = "Peter";
+console.log(myString);
+Object.assign(myString, "Peter Smith");
+
+
+/*
 Objects
 */
+ 
 let day1 = {
     squirrel: false,
-    events: ["work", "home", "jogging"]
+    events: [[1, ["this", "that", "the other"], 2, 3, 4, 5], "work", "home", "jogging"]
 };
 
+/*
 console.log(day1.events);
+console.log(day1.events[1]);
+console.log(typeof(day1.squirrel));
+
+console.log(typeof(day1.events[0][1][2])); // array notation
+day1.wolf = false; // creating an object property on the fly
+console.log(day1.wolf);
+console.log(day1);
+console.log("squirrel" in day1); // test if a property is in an obect. Use a string on the left of the in operator
+*/
+
+console.log(Object.keys(day1));
