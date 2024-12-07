@@ -45,18 +45,17 @@ function printArray(arraylist) {
 printArray(myArray);
  */
 
-let myString = "Peter";
-console.log(myString);
-Object.assign(myString, "Peter Smith");
-
 
 /*
 Objects
 */
- 
+let myObject = {
+    news: true
+};
 let day1 = {
     squirrel: false,
-    events: [[1, ["this", "that", "the other"], 2, 3, 4, 5], "work", "home", "jogging"]
+    events: [[1, ["this", "that", "the other"], 2, 3, 4, 5], "work", "home", "jogging"],
+    myObject
 };
 
 /*
