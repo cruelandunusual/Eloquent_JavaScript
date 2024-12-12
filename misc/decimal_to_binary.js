@@ -44,7 +44,7 @@ function binary_to_decimal(binary) {
 
 /*
 I think this algorithm comes from K&R.
-The NewArray function is something I found on stackexchange
+The NewArray function is something I found on stackexchange.
 */
 /*
 function decimal_to_binary(decimal) {
@@ -81,9 +81,15 @@ function NewArray(size, data) {
 /////////////////////////////////////////////////////////////
 
 /*
-My idea 
+My idea here was to use a lookup table containing strings storing the first 10 whole
+numbers as bit patterns. The algorithm adds the least significant bit for each
+operand, stores the result incrementally in a string; after computation is finished
+the string is reversed so that the least significant bit is correctly at the rightmost side.
+Operands can be stacked up by calling the function as a parameter to another instance
+of calling the function, to overcome the limitation of adding just two operands at once.
 */
 let lookUpTable = {
+    b0: "0000",
     b1: "0001",
     b2: "0010",
     b3: "0011",
@@ -92,47 +98,11 @@ let lookUpTable = {
     b6: "0110",
     b7: "0111",
     b8: "1000",
-    b9: "1001",
-    b10: "1010"
+    b9: "1001"
 };
 
 // console.log(lookUpTable.b1);
 // console.log(0 || 0);
-
-/*
-Testing the binaryAddTwoBits function separately
-(it's part of a bigger solutions and embedded inside
-another function below)
-*/
-
-/* function binaryAddTwoBits(op1, op2, carry) {
-    op1 = Number(op1);
-    op2 = Number(op2);
-    carry = Number(carry);
-    let result = 0;
-    let tempResultArray = [result, carry];
-    if (op1 && op2 && carry) {
-        result = '1', carry = '1';
-    }
-    else if (op1 && op2) {
-        result = '0', carry = '1';
-    }
-    else if ((op1 || op2) && carry) {
-        result = '1', carry = '0';
-    }
-    else if (op1 || op2) {
-        result = '1', carry = '0';
-    }
-    else {
-        result = carry = '0';
-    }
-    tempResultArray = [result, carry];
-    return tempResultArray;
-}
-
-console.log(binaryAddTwoBits(1, 1, 0));
-console.log('0' && '0' && '0' && '0');
- */
 
 
 const INDEX_RESULT = 0;
@@ -160,6 +130,9 @@ function addBinaryNumbers(op1, op2, carry = 0) {
     else if (op1 || op2) {
         result = '1', carry = '0';
     }
+    else if (carry) {
+        result = '1', carry = '0';
+    }
     else {
         result = carry = '0';
     }
@@ -176,5 +149,4 @@ function addBinaryNumbers(op1, op2, carry = 0) {
     return resultStr.split("").reverse().join("");
 }
 
-//console.log(binaryAddTwoBits(1, 0, 0));
-console.log(addBinaryNumbers(lookUpTable.b1, lookUpTable.b3));
+console.log((addBinaryNumbers(lookUpTable.b5,addBinaryNumbers(lookUpTable.b2, addBinaryNumbers(lookUpTable.b1, lookUpTable.b6)))));
