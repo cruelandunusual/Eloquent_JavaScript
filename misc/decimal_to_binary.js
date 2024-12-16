@@ -25,7 +25,7 @@ Classic binary to decimal algorithm,
 multiplying the value of each position
 by an increasing power of two.
 */
-/* 
+
 function binary_to_decimal(binary) {
     let result = 0;
     let multiplier = 1;
@@ -38,7 +38,7 @@ function binary_to_decimal(binary) {
 
 // myString = "1101010101010010101010101010";
 // console.log(binary_to_decimal(myString));
-*/
+
 
 /////////////////////////////////////////////////////////////
 
@@ -149,4 +149,48 @@ function addBinaryNumbers(op1, op2, carry = 0) {
     return resultStr.split("").reverse().join("");
 }
 
-console.log((addBinaryNumbers(lookUpTable.b5,addBinaryNumbers(lookUpTable.b2, addBinaryNumbers(lookUpTable.b1, lookUpTable.b6)))));
+console.log(binary_to_decimal((addBinaryNumbers(lookUpTable.b5,addBinaryNumbers(lookUpTable.b2, addBinaryNumbers(lookUpTable.b1, lookUpTable.b6))))));
+
+//console.log((addBinaryNumbers(lookUpTable.b5,addBinaryNumbers(lookUpTable.b2, addBinaryNumbers(lookUpTable.b1, lookUpTable.b6)))));
+
+/* 
+function multiplyBinaryNumbers(op1, op2, carry = 0) {
+    let result = 0;
+    let finalArray = [];
+    let tempResultArray = [result, carry];
+    let resultStr = "";
+    const bitlength = 4;
+    function binaryMultiplyTwoBits(op1, op2, carry) {
+        op1 = Number(op1);
+        op2 = Number(op2);
+        carry = Number(carry);
+    if (op1 && op2 && carry) {
+        result = '1', carry = '1';
+    }
+    else if (op1 && op2) {
+        result = '0', carry = '1';
+    }
+    else if ((op1 || op2) && carry) {
+        result = '0', carry = '1';
+    }
+    else if (op1 || op2) {
+        result = '1', carry = '0';
+    }
+    else if (carry) {
+        result = '1', carry = '0';
+    }
+    else {
+        result = carry = '0';
+    }
+        tempResultArray = [result, carry];
+        return tempResultArray;
+    }
+    for (let i = bitlength-1; i >= 0; i--) {
+        finalArray = binaryMultiplyTwoBits(op1[i], op2[i], tempResultArray[INDEX_CARRY]);
+        resultStr += finalArray[INDEX_RESULT];
+    }
+    if (finalArray[1] == '1') {
+        resultStr += finalArray[INDEX_CARRY]
+    }
+    return resultStr.split("").reverse().join("");
+} */
