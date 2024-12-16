@@ -153,8 +153,13 @@ console.log(binary_to_decimal((addBinaryNumbers(lookUpTable.b5,addBinaryNumbers(
 
 //console.log((addBinaryNumbers(lookUpTable.b5,addBinaryNumbers(lookUpTable.b2, addBinaryNumbers(lookUpTable.b1, lookUpTable.b6)))));
 
-/* 
-function multiplyBinaryNumbers(op1, op2, carry = 0) {
+
+/*
+pass the whole multiplicand and one digit from the multiplier
+compute the result for each multiplier
+add the results together (using my add function above?)
+*/
+function multiplyBinaryNumbers(multiplier, multiplicand, carry = 0) {
     let result = 0;
     let finalArray = [];
     let tempResultArray = [result, carry];
@@ -193,4 +198,4 @@ function multiplyBinaryNumbers(op1, op2, carry = 0) {
         resultStr += finalArray[INDEX_CARRY]
     }
     return resultStr.split("").reverse().join("");
-} */
+}
