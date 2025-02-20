@@ -13,7 +13,7 @@ if (x < (100/y))
 }
 else
 {
-    console.log("ha ha, x is way too big");
+    console.log(x + " is bigger than " + 100/y);
 }
  */
 
@@ -49,13 +49,11 @@ resultStr = x + " > " + y;
 console.log(x>y ? resultStr + " = true" : resultStr + " = false");
 
 console.log("-----------");
-
-console.log(!(x>y));
  */
 
 /////////////////////////////////////////////////////////////
 
-/* 
+
 // NaN -- somehow this doesn't work for values that aren't a number.
 // e.g. the test !Number.isNaN(num) printed inside a console.log will
 // print the properly expected result, but the test inside an if/else
@@ -83,7 +81,7 @@ else if (myNum < 50) {
 else {
     console.log("big");
 }
- */
+
 
 /////////////////////////////////////////////////////////////
 
@@ -255,7 +253,7 @@ When you have a program that generates this pattern, define a binding size
 of the given width and height.
 */
 
-let gridLen = 12;
+/* let gridLen = 12;
 let chessStr = "";
 let blank = true; // start the grid with a blank square
 for (let y = 0; y < gridLen; y++) { // outer loop for height
@@ -275,5 +273,5 @@ for (let y = 0; y < gridLen; y++) { // outer loop for height
     }
     // if it's an odd x*x then leave blank flipped for the next line
 }
-console.log(chessStr);
+console.log(chessStr); */
 
