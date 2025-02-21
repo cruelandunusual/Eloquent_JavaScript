@@ -11,14 +11,14 @@ to the function definition. There should be a semi colon
 after the curly bracket that closes the function definition,
 although in practise it works without it
 */
-/*
+/* 
 const square = function(x) {
     return x *x;
 };
 
 let result = square(4);
 console.log(result);
-
+ */
 
 
 /*
@@ -32,7 +32,7 @@ const roundTo = function(n, step) {
     return n - remainder + (remainder < step / 2 ? 0 : step);
 };
 
-console.log(roundTo(30,10));
+console.log(roundTo(32,10));
  */
 
 /////////////////////////////////////////////////////////////
@@ -173,6 +173,7 @@ function wrapValue(n){
 
 let wrap1 = wrapValue(1);
 let wrap2 = wrapValue(2);
+console.log(wrapValue(4));
 console.log(wrap1());
 console.log(wrap2());
  */
@@ -184,7 +185,7 @@ And lo, this example shows the usefulness of closures pretty clearly.
 This is actually really clever and I can see how this could
 be used in production.
 */
-/* 
+
 function multiplier(factor){
     return number => number * factor;
 }
@@ -197,7 +198,7 @@ console.log(thrice(5));
 
 let half = multiplier(0.5);
 console.log(half(10));
- */
+
 
 /////////////////////////////////////////////////////////////
 
@@ -379,7 +380,7 @@ it takes a second argument that indicates the character that is to be counted
 (rather than counting only uppercase B characters). Rewrite countBs to make
 use of this new function.
 */
-
+/* 
 function countChars(str, char) {
 
     let c = 0;
@@ -395,3 +396,4 @@ function countChars(str, char) {
 
 //console.log(countChars("bbbBBBbb", 'b'));
 console.log(countChars(process.argv[2], process.argv[3]));
+ */
