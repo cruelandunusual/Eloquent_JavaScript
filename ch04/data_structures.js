@@ -25,17 +25,18 @@ Elements can themselves be arrays, recursively.
 */
 
 /*
-Recursive function to print the each element of an array.
+Recursive function to print each element of an array.
 If an element is itself an array, the function is called and
 passed that element/array. 
 */
 /* 
 let myArray = [[1, ["this", "that", "the other"], 2, 3, 4, 5], "work", "home", "jogging"];
+let myArray2 = [[1, 2, 3], ["four", "five", "six"], [7,["eight", "nine", "ten"],11]];
 
 function printArray(arraylist) {
     for (let i = 0; i < arraylist.length; i++) {
-        if (typeof (arraylist[i]) == 'object') {
-            printArray(arraylist[i]);
+        if (typeof (arraylist[i]) == 'object') { // if an element is itself an array
+            printArray(arraylist[i]); // call this function and pass it the element
         }
         else {
             console.log(arraylist[i]);
@@ -50,14 +51,31 @@ printArray(myArray);
 /*
 Objects
 */
+
 let myObject = {
-    news: true
+    news: true, // true can be a value of a property
+    "forgot my name": "verifiable" // if a property's name isn't a valid binding name or number then it
+    // must be quoted, as above. This is also true for values of those properties
 };
+
+if (myObject.news) {
+console.log(myObject["forgot my name"]);
+}
+
+
 let day1 = {
     squirrel: false,
-    events: [[1, ["this", "that", "the other"], 2, 3, 4, 5], "work", "home", "jogging"],
-    myObject
+    events: ["work", "gym", "home"],
 };
+
+if (day1.squirrel == false) {
+    day1.events.forEach(element => {
+        console.log(element);
+    });
+}
+else {
+    console.log("it seems you were a wolf");
+}
 
 /*
 console.log(day1.events);
@@ -71,4 +89,4 @@ console.log(day1);
 console.log("squirrel" in day1); // test if a property is in an obect. Use a string on the left of the in operator
 */
 
-console.log(Object.keys(day1));
+//console.log(Object.keys(day1));
