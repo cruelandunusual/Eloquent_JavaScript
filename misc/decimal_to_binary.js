@@ -101,8 +101,9 @@ let lookUpTable = {
     b9: "1001"
 };
 
-// console.log(lookUpTable.b1);
-// console.log(0 || 0);
+console.log(lookUpTable.b1);
+console.log("print the results of 0 || 1: ", 0 || 1);
+console.log(0 || 1);
 
 
 const INDEX_RESULT = 0;
