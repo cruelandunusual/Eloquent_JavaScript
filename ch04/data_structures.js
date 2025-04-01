@@ -172,3 +172,8 @@ function printJournal(journal) {
 }
 
 printJournal(journal);
+
+
+/*
+About to start the section on Correlation, page 63
+*/
